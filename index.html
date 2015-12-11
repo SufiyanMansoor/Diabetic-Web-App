@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="app.js"></script>
+<style>
+body
+{
+ margin: 0 auto;
+ padding: 0;
+ height: 500px;
+}
+.md-card-image
+{
+ height: 80px;
+}
+.md-title {
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    50% {text-shadow: 10px 20px 30px blue;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    50% {text-shadow: 10px 20px 30px blue;}
+}
+.md-title
+{
+  text-align: center;
+  color: #a06b3c;
+  font-size: 4.0em;
+  margin-top: 0;
+  padding-top: 0 ;
+  font-weight: 800;
+  height: 70px;
+
+
+}
+
+.md-padding
+{
+  height: 150px;
+
+}
+#bech
+{
+ width: 250px;
+ font-size: 1.0em;
+
+}
+.md-raised
+{
+ font-size: 0.6em;
+ width: 250px;
+ font-family: RobotoDraft, Roboto, 'Helvetica Neue', sans-serif;
+ font-weight: 800;
+}
+
+.menu
+{
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ font-size: 2.0em;
+  margin-top: 0;
+  padding-top:0;
+  border-radius: 10px;
+  text-align: center;
+
+
+}
+.oneset
+{
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+
+
+}
+
+.upper
+{
+margin-top: 0;
+}
+/*rough coding start*/
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+html, body { background: #333 url("http://codepen.io/images/classy_fabric.png"); }
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 400px;
+    height: 300px;
+    display: block;
+    position: absolute;
+     margin-left: 110px;
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height:100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+    width: 100%;
+    bottom: 9px;
+    height: 11px;
+    display: block;
+    position: absolute;
+    text-align: center;
+}
+
+.nav-dots .nav-dot {
+    top: -5px;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+    background: rgba(0, 0, 0, 0.8);
+}
+/*rough coding end*/
+.myb{
+    text-shadow: 0 0 3px #8b2837, 0 0 5px #7c35a7;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    font-size: 2.0em;
+
+}
+.carddemoBasicUsage md-card {
+    min-height: 150px; }
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body ng-app="myModule" >
+<div class="hello1" ng-controller="imgCtrl">
+<md-card>
+    <!--<img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">-->
+    <md-card-content>
+
+        <h2 class="md-title">How To Fit in Diabetic</h2>
+</md-card-content>
+    </md-card>
+</div>
+
+<div ng-controller="AppCtrl" layout="column" style="height:500px;">
+    <section layout="row" flex>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar class="md-theme-indigo">
+                <h1 class="md-toolbar-tools">Press Here Button Options</h1>
+            </md-toolbar>
+            <md-content layout-padding ng-controller="LeftCtrl">
+                <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                    Close Sidenav Left
+                </md-button>
+
+
+                    <md-button ui-sref="daily" class="md-raised" >
+                        Daily Walk
+                    </md-button>
+                    <br/>
+                    <md-button ui-sref="salogan" class="md-raised">
+                        Diabetic Salogans
+                    </md-button>
+                    <br/>
+                    <md-button ui-sref="check" class="md-raised">
+                        Daily Sugar/Blood Pressure Check
+                    </md-button>
+                    <br/>
+                    <md-button ui-sref="dite" class="md-raised">
+                        Diet Menu
+                    </md-button>
+                    <br/>
+                    <md-button ui-sref="medicines" class="md-raised">
+                        Medicines/Insulin
+                    </md-button>
+                    <br/>
+                    <md-button ui-sref="precautions" class="md-raised">
+                        Precautions To Non-Diabetic Patients
+                    </md-button>
+                    <br/>
+                    <md-button ng-click="toggleRight()"
+                               class="md-raised">
+                        Press To Contact Here
+                    </md-button>
+                            </md-content>
+        </md-sidenav>
+
+        <md-content flex layout-padding>
+
+
+                <div >
+
+                  <div class="upper" ui-view></div>
+
+                </div>
+
+                <div>
+                    <md-button ng-click="toggleLeft()"
+                               class="md-primary" hide-gt-md>
+                        Toggle left
+                    </md-button>
+                </div>
+
+            <div flex></div>
+        </md-content>
+        <md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">Contact Us</h1>
+            </md-toolbar>
+            <md-content ng-controller="RightCtrl" layout-padding>
+                <form>
+                    <md-button
+                            href="https://www.facebook.com/sufiyan.ahmed.967"
+                            title="Launch Fb.com in new window"
+                            target="_blank"
+                            aria-label="Contact With Fb.com"
+                            class="md-raised md-primary">
+                       FaceBook Login
+                    </md-button>
+                    <md-button
+                           href="https://mail.google.com/mail/u/0/?tab=wm"
+                           title="Launch Google.com in new window"
+                           target="_blank"
+                           aria-label="Gmail.com"
+                           class="md-warn md-raised md-hue-2">
+                       Google Login
+                    </md-button>
+                    <md-button
+                                href="https://github.com/SufiyanMansoor"
+                               class="md-accent md-raised md-hue-1"
+                                title="Launch Git Hub account in new window"
+                                target="_blank"
+                                aria-label="Contact With Fb.com">
+                    Git Hub
+                    </md-button>
+
+
+                 <!--   <md-input-container>
+                        <label for="testInput">Test input</label>
+                        <input type="text" id="testInput"
+                               ng-model="data" md-sidenav-focus>
+                    </md-input-container>-->
+                </form>
+                <br/>
+                <br/><br/>
+                <br/>
+                <br/>
+                <br/>
+                <md-button ng-click="close()" class="md-accent">
+                    Click To Close
+                </md-button>
+            </md-content>
+        </md-sidenav>
+    </section>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
